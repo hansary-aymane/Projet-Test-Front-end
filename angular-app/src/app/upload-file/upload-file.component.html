@@ -1,0 +1,37 @@
+<body>
+    <div id="wrapper">
+       <!-- Sidebar -->
+       <div id="sidebar-wrapper">
+          <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+             <li class="active">
+                <a routerLink="/dash-board"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> Angular App</a>
+                <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                    <li><a routerLink="/dash-board" routerLinkActive="router-link-active" >Dashboard</a></li>
+                    <li><a routerLink="/datatable" routerLinkActive="router-link-active" >Datatable</a></li>
+                    <li><a href="/upload-file">Uploader File</a></li>
+                    <li><a href="">SIGN IN / SIGN UP</a></li>
+                </ul>
+             </li>
+          </ul>
+       </div>
+       <!-- /#sidebar-wrapper -->
+       <!-- Page Content -->
+       <div id="page-content-wrapper">
+          <div class="container-fluid xyz">
+             <div class="row">
+                <div class="col-lg-12">
+                    <h1>Upload a file with a simulation of the transfer</h1>
+                    <input type="file" (change)="onFileSelected($event)" />
+                    <div style="margin-top: 20px;">
+                        <span style="color: red;">Transfer Progress : </span> {{ uploadService.progress$ | async | number:'1.2-2' }}%
+                    </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+  
+  </body>
